@@ -1,0 +1,25 @@
+<header>
+  <nav>
+    <a routerLink="">
+      <img class="imgLogo" src="../assets/logo.png" alt="logo">
+    </a>
+    <a class="navLetras" routerLink="/products"> Lista de Productos </a>
+    <a class="navLetras" routerLink="/add-product"> Añade un nuevo Producto</a>
+
+    <a class="navLetras" *ngIf="isLoggedIn()"  [routerLink]="'/users/' + getUserId()">Ver Perfil</a>
+
+    <a class="navLetras" *ngIf="!isLoggedIn()" routerLink="/login">Login</a>
+
+    <a class="navLetras" *ngIf="isLoggedIn()" (click)="logout()">Cerrar sesión</a>
+    <a class="navLetras" *ngIf="!isLoggedIn()" routerLink="/register">Registro</a>
+  </nav>
+</header>
+
+<div class="componentesBody">
+  <router-outlet></router-outlet>
+</div>
+
+
+<footer>
+  <p>Proyecto Final de Angular. Realizado por Cecilia Aranggio, Javier Sánchez y Jesús Sánchez</p>
+</footer>

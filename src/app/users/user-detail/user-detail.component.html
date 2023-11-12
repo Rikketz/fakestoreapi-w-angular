@@ -1,0 +1,62 @@
+<div class="total">
+  <div class="detailUser">
+    <h4 class="detailUser--p">Nombre: {{userForm.name.firstname}}</h4>
+    <h4 class="detailUser--p">Apellidos: {{userForm.name.lastname}}</h4>
+    <h4 class="detailUser--p">Correo electrónico: {{userForm.email}}</h4>
+    <h4 class="detailUser--p">Telefono: {{userForm.phone}}</h4>
+
+    <h4 class="detailUser--p">Dirección: {{userForm.address.street}}, {{userForm.address.number}}, {{userForm.address.zipcode}}, {{userForm.address.city}}</h4>
+
+
+
+
+    <button (click)="toggleButton()" *ngIf="!botonActualizar"> Editar usuario </button>
+    <button (click)="toggleButton()" *ngIf="botonActualizar"> No editar </button>
+  </div>
+
+  <div class="detailUserEdit" *ngIf="botonActualizar">
+    <form class="detailUserEdit__form" (ngSubmit)="updateUserDetails()">
+      <label class="detailUserEdit--p" for="username">Nombre de usuario:</label>
+      <input type="text" id="username" [(ngModel)]="userForm.username" name="username" />
+
+      <label class="detailUserEdit--p" for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="userForm.email" name="email" />
+
+      <label class="detailUserEdit--p" for="password">Contraseña:</label>
+      <input type="password" id="password" [(ngModel)]="userForm.password" name="password" />
+
+      <label class="detailUserEdit--p" for="email">Nombre:</label>
+      <input *ngIf="userForm.name" type="text" [(ngModel)]="userForm.name.firstname" name="firstname" />
+
+      <label class="detailUserEdit--p" for="lastname">Apellido:</label>
+      <input type="text" id="lastname" [(ngModel)]="userForm.name.lastname" name="lastname" />
+
+      <label class="detailUserEdit--p" for="phone">Teléfono:</label>
+      <input type="tel" id="phone" [(ngModel)]="userForm.phone" name="phone" />
+
+      <label class="detailUserEdit--p" for="id">ID:</label>
+      <input type="number" id="id" [(ngModel)]="userForm.id" name="id" />
+
+      <label class="detailUserEdit--p" for="city">Ciudad:</label>
+      <input type="text" id="city" [(ngModel)]="userForm.address.city" name="city" />
+
+      <label class="detailUserEdit--p" for="street">Calle:</label>
+      <input type="text" id="street" [(ngModel)]="userForm.address.street" name="street" />
+
+      <label class="detailUserEdit--p" for="number">Número:</label>
+      <input type="number" id="number" [(ngModel)]="userForm.address.number" name="number" />
+
+      <label class="detailUserEdit--p" for="zipcode">Código postal:</label>
+      <input type="number" id="zipcode" [(ngModel)]="userForm.address.zipcode" name="zipcode" />
+
+      <label class="detailUserEdit--p" for="latitude">Latitud:</label>
+      <input type="number" id="latitude" [(ngModel)]="userForm.address.geolocation.lat" name="latitude" />
+
+      <label class="detailUserEdit--p" for="longitude">Longitud:</label>
+      <input type="number" id="longitude" [(ngModel)]="userForm.address.geolocation.long" name="longitude" />
+
+
+      <button type="submit">Actualizar</button>
+    </form>
+  </div>
+</div>

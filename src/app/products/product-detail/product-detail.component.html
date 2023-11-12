@@ -1,0 +1,60 @@
+<div class="total">
+  <div class="product-list">
+    <h2 class="product-list--h2">{{selectedProduct.title}}</h2>
+    <img class="product-list--img" src={{selectedProduct.image}} alt={{selectedProduct.title}}>
+    <h4 class="product-list--h4">{{selectedProduct.description}}</h4>
+    <h3 class="product-list--h3">{{selectedProduct.price}} €</h3>
+    <button *ngIf="!botonActualizar" (click)='toggleButton()'>Editar</button>
+    <button *ngIf="botonActualizar" (click)='toggleButton()'>No editar</button>
+  </div>
+
+  <div class="edit-list" *ngIf='botonActualizar'>
+    <form  [formGroup]="productForm" (ngSubmit)="update()">
+
+      <div class="edit-list__div">
+        <label class="product-list--h2" for="title"> Nombre del producto: </label>
+        <input type="text" id="title" formControlName="title" class="form-control" required>
+        <div *ngIf="productForm.get('title')?.hasError('required')" class="text-danger">Este campo es obligatorio</div>
+        <div *ngIf="productForm.get('title')?.hasError('minLenght')" class="text-danger">El nombre debe tener un mínimo de 6 caracteres</div>
+      </div>
+
+      <div class="edit-list__div">
+        <label class="product-list--h2" for="description">Descripción: </label>
+        <textarea type="text" id="description" formControlName="description" class="form-control"></textarea>
+        <div *ngIf="productForm.get('description')?.hasError('maxLenght')" class="text-danger">La descripción no puede tener más de 600 caracteres</div>
+        <div *ngIf="productForm.get('description')?.hasError('required')" class="text-danger">Este campo es obligatorio</div>
+      </div>
+
+      <div class="edit-list__div_precio">
+        <label class="product-list--h2" for="price">Precio: </label>
+        <input class="edit-list--precio" type="number" id="price" formControlName="price" class="form-control">
+        <div *ngIf="productForm.get('price')?.hasError('required')" class="text-danger">Este campo es obligatorio</div>
+      </div>
+
+      <div class="edit-list__div__categoria">
+        <label class="product-list--h2" for="category">Categoria: </label>
+        <select name="category" id="category" formControlName="category">
+          <option value="electronics">Electrónica</option>
+          <option value="jewelery">Joyería</option>
+          <option value="men's clothing">Ropa de Hombre</option>
+          <option value="women's clothing">Ropa de Mujer</option>
+        </select>
+        <div *ngIf="productForm.get('category')?.hasError('required')" class="text-danger">Selecciona una categoría</div>
+      </div>
+
+      <div class="edit-list__div__imagen">
+        <label class="product-list--h2" for="image">URL de la imagen: </label>
+        <input type="text" id="image" formControlName="image" class="form-control">
+        <div *ngIf="productForm.get('image')?.hasError('image')" class="text-danger">Este campo es obligatorio</div>
+      </div>
+
+      <button class="update">Cambiar</button>
+
+    </form>
+  </div>
+
+
+</div>
+
+
+

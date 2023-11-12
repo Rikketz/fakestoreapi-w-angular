@@ -1,0 +1,25 @@
+
+<form class="form" (ngSubmit)="onSubmit()">
+  <label class="form__label" for="">
+    <p class="form__label--p">Introduce un nombre de usuario:</p>
+    <input class="form__label--input" type="text" [(ngModel)]="userForm.username" name="username">
+  </label>
+  <label class="form__label" for="">
+    <p class="form__label--p">Introduce una contraseña:</p>
+    <input class="form__label--input" type="password" [(ngModel)]="userForm.password" name="password">
+  </label>
+  <label class="form__label" for="">
+    <p class="form__label--p">Escribe tu nombre:</p>
+    <input class="form__label--input" type="firstname" [(ngModel)]="userForm.name.firstname" name="firstname">
+  </label>
+  <label class="form__label" for="">
+    <p class="form__label--p">Escribe tu apellido:</p>
+    <input class="form__label--input" type="lastname" [(ngModel)]="userForm.name.lastname" name="lastname">
+  </label>
+  <label class="form__label" for="">
+    <p class="form__label--p">Escribe tu dirección de correo electrónico:</p>
+    <input class="form__label--input" type="email" [(ngModel)]="userForm.email" name="email">
+  </label>
+
+  <button type="submit">Registrate</button>
+</form>
