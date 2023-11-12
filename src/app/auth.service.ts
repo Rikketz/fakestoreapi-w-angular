@@ -10,7 +10,8 @@ export class AuthService {
   private isAuthenticated = false;
   private userId: any;
 
-  private jsonUrl = 'http://localhost:3000/users';
+  private jsonUrl = 'https://fakestoreapi.com/users';
+  // private jsonUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 

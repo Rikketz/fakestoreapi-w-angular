@@ -231,6 +231,14 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "id": 21,
+      "title": "aaaaaaaaaaaaaa",
+      "price": 1,
+      "category": "jewelery",
+      "description": "aaaaaaaaaaaa",
+      "image": "aaa"
     }
   ],
   "users": [
@@ -538,6 +546,28 @@
       "name": {
         "firstname": "aaaaa",
         "lastname": "aaaaa"
+      },
+      "phone": 0,
+      "__v": 0
+    },
+    {
+      "address": {
+        "geolocation": {
+          "lat": 0,
+          "long": 0
+        },
+        "city": "",
+        "street": "",
+        "number": 0,
+        "zipcode": 0
+      },
+      "id": 15,
+      "email": "hola",
+      "username": "hola",
+      "password": "hola",
+      "name": {
+        "firstname": "hola",
+        "lastname": "hola"
       },
       "phone": 0,
       "__v": 0

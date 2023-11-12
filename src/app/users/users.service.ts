@@ -8,11 +8,11 @@ import { IUser } from '../models/user.model';
 })
 export class UsersService {
 
-  // url: string = "https://fakestoreapi.com/users";
-  url: string = "http://localhost:3000/users";
+  url: string = "https://fakestoreapi.com/users";
+  // url: string = "http://localhost:3000/users";
 
-  // urlLogin: string = "https://fakestoreapi.com/users";
-  urlLogin: string = "http://localhost:3000/users";
+  urlLogin: string = "https://fakestoreapi.com/users";
+  // urlLogin: string = "http://localhost:3000/users";
 
   userActive: boolean = false;
 

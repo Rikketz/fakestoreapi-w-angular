@@ -8,8 +8,8 @@ import { IProduct } from '../models/product.model';
 })
 export class ProductServiceService {
 
-  // url: string = "https://fakestoreapi.com/products";
-  url: string = "http://localhost:3000/products";
+  url: string = "https://fakestoreapi.com/products";
+  // url: string = "http://localhost:3000/products";
 
   constructor(private httpClient: HttpClient) { }
 
